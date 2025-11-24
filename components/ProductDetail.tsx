@@ -36,7 +36,28 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const savedAmount = (product.unitPrice - discountedPrice) * quantity;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 relative overflow-hidden">
+    <main
+      className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 relative overflow-hidden"
+      itemScope
+      itemType="https://schema.org/Product"
+    >
+      {/* Hidden microdata elements */}
+      <meta itemProp="sku" content={product.productId} />
+      <meta itemProp="mpn" content={product.productId} />
+      <meta itemProp="brand" content="Best Black Friday Shop" />
+      <link itemProp="url" href={product.productUrls} />
+      <link itemProp="image" href={product.productImageUrls[0]} />
+
+      {/* Product offer data */}
+      <div itemProp="offers" itemScope itemType="https://schema.org/Offer" style={{ display: 'none' }}>
+        <meta itemProp="price" content={discountedPrice.toFixed(2)} />
+        <meta itemProp="priceCurrency" content={product.currency} />
+        <meta itemProp="availability" content="https://schema.org/InStock" />
+        <meta itemProp="itemCondition" content="https://schema.org/NewCondition" />
+        <meta itemProp="url" content={product.productUrls} />
+        <link itemProp="seller" href="https://best-black-friday-shop.com" />
+      </div>
+
       {/* Animated background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-purple-900/20 to-transparent rounded-full blur-3xl animate-pulse" />
@@ -82,22 +103,31 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             <div className="flex flex-col">
               {/* Category & Status */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-semibold text-pink-400 bg-pink-400/10 px-3 py-1 rounded-full">
+                <span
+                  className="text-xs font-semibold text-pink-400 bg-pink-400/10 px-3 py-1 rounded-full"
+                  itemProp="category"
+                >
                   {product.virtualCategory}
                 </span>
                 <span className="text-xs font-semibold text-green-400 bg-green-400/10 px-3 py-1 rounded-full flex items-center gap-1">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  In Stock
+                  <span itemProp="availability" content="https://schema.org/InStock">In Stock</span>
                 </span>
               </div>
 
               {/* Product Name */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight"
+                itemProp="name"
+              >
                 {product.productName}
               </h1>
 
               {/* Description */}
-              <p className="text-gray-400 text-lg mb-6 leading-relaxed">
+              <p
+                className="text-gray-400 text-lg mb-6 leading-relaxed"
+                itemProp="description"
+              >
                 {product.productDescription}
               </p>
 
