@@ -144,25 +144,33 @@ export default function CartPage() {
                   >
                     <div className="flex gap-6">
                       {/* Product Image */}
-                      <div className="flex-shrink-0">
-                        <div className="w-32 h-32 bg-gray-800 rounded-xl overflow-hidden">
+                      <Link
+                        href={`/product/${item.productId}`}
+                        className="flex-shrink-0"
+                      >
+                        <div className="w-32 h-32 bg-gray-800 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-pink-500 transition-all duration-300">
                           <img
                             src={item.productImageUrls[0]}
                             alt={item.productName}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                      </div>
+                      </Link>
 
                       {/* Product Info */}
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-start gap-4 mb-4">
                           <div>
-                            <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">
-                              {item.productName}
-                            </h3>
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="text-2xl font-black text-pink-400">
+                            <Link href={`/product/${item.productId}`}>
+                              <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 hover:text-pink-400 transition-colors cursor-pointer">
+                                {item.productName}
+                              </h3>
+                            </Link>
+                            <Link
+                              href={`/product/${item.productId}`}
+                              className="flex items-center gap-2 mb-2 w-fit"
+                            >
+                              <span className="text-2xl font-black text-pink-400 hover:text-pink-300 transition-colors cursor-pointer">
                                 ${discountedPrice.toFixed(2)}
                               </span>
                               <span className="text-sm text-gray-600 line-through">
@@ -171,7 +179,7 @@ export default function CartPage() {
                               <span className="text-xs bg-gradient-to-r from-pink-500 to-purple-600 text-white px-2 py-1 rounded-full font-bold">
                                 {item.discount}% OFF
                               </span>
-                            </div>
+                            </Link>
                             {itemSavings > 0 && (
                               <div className="text-xs text-green-400 flex items-center gap-1">
                                 <Sparkles className="w-3 h-3" />
