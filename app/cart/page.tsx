@@ -14,6 +14,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export default function CartPage() {
   const [mounted, setMounted] = useState(false);
@@ -26,6 +27,27 @@ export default function CartPage() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleRemoveItem = (productId: string, productName: string, quantity: number) => {
+    removeItem(productId);
+    toast.success(`Removed ${productName} (x${quantity}) from cart`, {
+      duration: 3000,
+    });
+  };
+
+  const handleUpdateQuantity = (productId: string, productName: string, newQuantity: number, oldQuantity: number) => {
+    updateQuantity(productId, newQuantity);
+
+    if (newQuantity > oldQuantity) {
+      toast.success(`Increased ${productName} quantity to ${newQuantity}`, {
+        duration: 2000,
+      });
+    } else {
+      toast.success(`Decreased ${productName} quantity to ${newQuantity}`, {
+        duration: 2000,
+      });
+    }
+  };
 
   if (!mounted) {
     return (
@@ -190,7 +212,7 @@ export default function CartPage() {
 
                           {/* Remove Button */}
                           <button
-                            onClick={() => removeItem(item.productId)}
+                            onClick={() => handleRemoveItem(item.productId, item.productName, item.quantity)}
                             className="text-gray-500 hover:text-red-400 transition-colors p-2"
                             aria-label="Remove item"
                           >
@@ -202,7 +224,7 @@ export default function CartPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <button
-                              onClick={() => updateQuantity(item.productId, item.quantity - 1)}
+                              onClick={() => handleUpdateQuantity(item.productId, item.productName, item.quantity - 1, item.quantity)}
                               className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg p-2 transition-colors"
                               aria-label="Decrease quantity"
                             >
@@ -212,7 +234,7 @@ export default function CartPage() {
                               {item.quantity}
                             </span>
                             <button
-                              onClick={() => updateQuantity(item.productId, item.quantity + 1)}
+                              onClick={() => handleUpdateQuantity(item.productId, item.productName, item.quantity + 1, item.quantity)}
                               className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg p-2 transition-colors"
                               aria-label="Increase quantity"
                             >
