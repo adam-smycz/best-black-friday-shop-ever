@@ -14,6 +14,7 @@ interface Product {
   currency: string;
   itemQuantity: number;
   discount: number;
+  stockQuantity: number;
   productCategory: string;
   productCategoryId: string;
   productDescription: string;
@@ -36,23 +37,40 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const [isAdding, setIsAdding] = useState(false);
   const router = useRouter();
   const addItem = useCartStore((state) => state.addItem);
+  const items = useCartStore((state) => state.items);
 
   const discountedPrice = product.unitPrice * (1 - product.discount / 100);
   const totalPrice = discountedPrice * quantity;
   const savedAmount = (product.unitPrice - discountedPrice) * quantity;
 
+  // Calculate how many items are already in cart
+  const cartItem = items.find(item => item.productId === product.productId);
+  const quantityInCart = cartItem ? cartItem.quantity : 0;
+  const remainingStock = product.stockQuantity - quantityInCart;
+  const isOutOfStock = remainingStock <= 0;
+
   const handleAddToCart = () => {
     setIsAdding(true);
 
     // Add item to cart with specified quantity
-    addItem({
+    const result = addItem({
       productId: product.productId,
       productName: product.productName,
       productImageUrls: product.productImageUrls,
       unitPrice: product.unitPrice,
       discount: product.discount,
       productUrls: product.productUrls,
+      stockQuantity: product.stockQuantity,
     }, quantity);
+
+    if (!result.success) {
+      // Show error toast
+      toast.error(result.error || 'Could not add item to cart', {
+        duration: 3000,
+      });
+      setIsAdding(false);
+      return;
+    }
 
     // Show success toast with product image
     toast.success(
@@ -197,6 +215,34 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 </div>
               </div>
 
+              {/* Stock Status */}
+              {quantityInCart > 0 && (
+                <div className="mb-4 bg-blue-900/20 border border-blue-500/30 rounded-xl p-3">
+                  <div className="text-blue-400 text-sm">
+                    <span className="font-semibold">{quantityInCart}</span> {quantityInCart === 1 ? 'item' : 'items'} already in cart
+                  </div>
+                </div>
+              )}
+
+              {isOutOfStock && (
+                <div className="mb-4 bg-red-900/20 border border-red-500/30 rounded-xl p-4">
+                  <div className="text-red-400 font-bold text-lg mb-1">
+                    Out of Stock
+                  </div>
+                  <div className="text-red-300 text-sm">
+                    All available items ({product.stockQuantity}) are already in your cart
+                  </div>
+                </div>
+              )}
+
+              {!isOutOfStock && remainingStock <= 3 && remainingStock > 0 && (
+                <div className="mb-4 bg-orange-900/20 border border-orange-500/30 rounded-xl p-3">
+                  <div className="text-orange-400 text-sm">
+                    <span className="font-semibold">Only {remainingStock} left</span> in stock!
+                  </div>
+                </div>
+              )}
+
               {/* Quantity Selector */}
               <div className="mb-6">
                 <label className="text-gray-400 font-medium mb-3 block">Quantity:</label>
@@ -205,6 +251,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
                       className="px-4 py-3 text-white hover:text-pink-400 transition-colors font-bold"
+                      disabled={isOutOfStock}
                     >
                       -
                     </button>
@@ -212,8 +259,9 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                       {quantity}
                     </span>
                     <button
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="px-4 py-3 text-white hover:text-pink-400 transition-colors font-bold"
+                      onClick={() => setQuantity(Math.min(remainingStock, quantity + 1))}
+                      className="px-4 py-3 text-white hover:text-pink-400 transition-colors font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={isOutOfStock || quantity >= remainingStock}
                     >
                       +
                     </button>
@@ -230,11 +278,11 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               <div className="flex gap-3 mb-8">
                 <button
                   onClick={handleAddToCart}
-                  disabled={isAdding}
+                  disabled={isAdding || isOutOfStock}
                   className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <ShoppingCart className="w-5 h-5" />
-                  <span>{isAdding ? "Adding..." : "Add to Cart"}</span>
+                  <span>{isOutOfStock ? "Out of Stock" : isAdding ? "Adding..." : "Add to Cart"}</span>
                 </button>
                 <button
                   onClick={() => setIsLiked(!isLiked)}

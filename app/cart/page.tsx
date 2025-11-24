@@ -36,7 +36,14 @@ export default function CartPage() {
   };
 
   const handleUpdateQuantity = (productId: string, productName: string, newQuantity: number, oldQuantity: number) => {
-    updateQuantity(productId, newQuantity);
+    const result = updateQuantity(productId, newQuantity);
+
+    if (!result.success) {
+      toast.error(result.error || 'Could not update quantity', {
+        duration: 3000,
+      });
+      return;
+    }
 
     if (newQuantity > oldQuantity) {
       toast.success(`Increased ${productName} quantity to ${newQuantity}`, {
@@ -158,6 +165,8 @@ export default function CartPage() {
                 const discountedPrice = item.unitPrice * (1 - item.discount / 100);
                 const itemTotal = discountedPrice * item.quantity;
                 const itemSavings = (item.unitPrice - discountedPrice) * item.quantity;
+                const isAtStockLimit = item.quantity >= item.stockQuantity;
+                const remainingStock = item.stockQuantity - item.quantity;
 
                 return (
                   <div
@@ -208,6 +217,18 @@ export default function CartPage() {
                                 You save ${itemSavings.toFixed(2)}!
                               </div>
                             )}
+
+                            {/* Stock Status Indicators */}
+                            {isAtStockLimit && (
+                              <div className="mt-2 text-xs text-red-400 bg-red-900/20 border border-red-500/30 rounded px-2 py-1 inline-block">
+                                Maximum stock reached ({item.stockQuantity} total)
+                              </div>
+                            )}
+                            {!isAtStockLimit && remainingStock <= 3 && remainingStock > 0 && (
+                              <div className="mt-2 text-xs text-orange-400 bg-orange-900/20 border border-orange-500/30 rounded px-2 py-1 inline-block">
+                                Only {remainingStock} more available
+                              </div>
+                            )}
                           </div>
 
                           {/* Remove Button */}
@@ -235,8 +256,9 @@ export default function CartPage() {
                             </span>
                             <button
                               onClick={() => handleUpdateQuantity(item.productId, item.productName, item.quantity + 1, item.quantity)}
-                              className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg p-2 transition-colors"
+                              className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg p-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-800"
                               aria-label="Increase quantity"
+                              disabled={isAtStockLimit}
                             >
                               <Plus className="w-4 h-4" />
                             </button>

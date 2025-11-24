@@ -9,13 +9,14 @@ export interface CartItem {
   discount: number;
   quantity: number;
   productUrls: string;
+  stockQuantity: number;
 }
 
 interface CartStore {
   items: CartItem[];
-  addItem: (product: Omit<CartItem, 'quantity'>, quantity?: number) => void;
+  addItem: (product: Omit<CartItem, 'quantity'>, quantity?: number) => { success: boolean; error?: string };
   removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  updateQuantity: (productId: string, quantity: number) => { success: boolean; error?: string };
   clearCart: () => void;
   getTotalItems: () => number;
   getTotalPrice: () => number;
@@ -27,11 +28,22 @@ export const useCartStore = create<CartStore>()(
       items: [],
 
       addItem: (product, quantity = 1) => {
-        set((state) => {
-          const existingItem = state.items.find(
-            (item) => item.productId === product.productId
-          );
+        const state = get();
+        const existingItem = state.items.find(
+          (item) => item.productId === product.productId
+        );
 
+        const newQuantity = existingItem ? existingItem.quantity + quantity : quantity;
+
+        // Check if we exceed stock
+        if (newQuantity > product.stockQuantity) {
+          return {
+            success: false,
+            error: `Only ${product.stockQuantity} items available in stock`
+          };
+        }
+
+        set((state) => {
           if (existingItem) {
             return {
               items: state.items.map((item) =>
@@ -46,6 +58,8 @@ export const useCartStore = create<CartStore>()(
             items: [...state.items, { ...product, quantity }],
           };
         });
+
+        return { success: true };
       },
 
       removeItem: (productId) => {
@@ -57,7 +71,22 @@ export const useCartStore = create<CartStore>()(
       updateQuantity: (productId, quantity) => {
         if (quantity <= 0) {
           get().removeItem(productId);
-          return;
+          return { success: true };
+        }
+
+        const state = get();
+        const item = state.items.find((item) => item.productId === productId);
+
+        if (!item) {
+          return { success: false, error: 'Item not found in cart' };
+        }
+
+        // Check if we exceed stock
+        if (quantity > item.stockQuantity) {
+          return {
+            success: false,
+            error: `Only ${item.stockQuantity} items available in stock`
+          };
         }
 
         set((state) => ({
@@ -65,6 +94,8 @@ export const useCartStore = create<CartStore>()(
             item.productId === productId ? { ...item, quantity } : item
           ),
         }));
+
+        return { success: true };
       },
 
       clearCart: () => {

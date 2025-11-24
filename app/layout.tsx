@@ -27,7 +27,11 @@ export default function RootLayout({
               background: 'rgb(17 24 39)',
               border: '1px solid rgb(55 65 81)',
               color: 'white',
-            },
+              minWidth: '400px',
+
+
+              maxWidth: '600px',
+              },
           }}
         />
       </body>
