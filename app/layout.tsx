@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingCartButton from "@/components/FloatingCartButton";
 
 export const metadata: Metadata = {
   title: "Best Black Friday Shop Ever",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        <FloatingCartButton />
       </body>
     </html>
   );

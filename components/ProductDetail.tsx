@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ShoppingCart, Heart, Share2, Tag, Truck, Shield, RotateCcw } from "lucide-react";
+import { useCartStore } from "@/store/cartStore";
 
 interface Product {
   productId: string;
@@ -30,10 +31,33 @@ interface ProductDetailProps {
 export default function ProductDetail({ product }: ProductDetailProps) {
   const [quantity, setQuantity] = useState(1);
   const [isLiked, setIsLiked] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
+  const addItem = useCartStore((state) => state.addItem);
 
   const discountedPrice = product.unitPrice * (1 - product.discount / 100);
   const totalPrice = discountedPrice * quantity;
   const savedAmount = (product.unitPrice - discountedPrice) * quantity;
+
+  const handleAddToCart = () => {
+    setIsAdding(true);
+
+    // Add item to cart with specified quantity
+    addItem({
+      productId: product.productId,
+      productName: product.productName,
+      productImageUrls: product.productImageUrls,
+      unitPrice: product.unitPrice,
+      discount: product.discount,
+      productUrls: product.productUrls,
+    }, quantity);
+
+    // Show visual feedback
+    setTimeout(() => {
+      setIsAdding(false);
+      // Reset quantity to 1 after adding
+      setQuantity(1);
+    }, 500);
+  };
 
   return (
     <main
@@ -177,9 +201,13 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
               {/* Action Buttons */}
               <div className="flex gap-3 mb-8">
-                <button className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                <button
+                  onClick={handleAddToCart}
+                  disabled={isAdding}
+                  className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
                   <ShoppingCart className="w-5 h-5" />
-                  <span>Add to Cart</span>
+                  <span>{isAdding ? "Adding..." : "Add to Cart"}</span>
                 </button>
                 <button
                   onClick={() => setIsLiked(!isLiked)}

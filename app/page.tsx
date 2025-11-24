@@ -1,8 +1,22 @@
-import { Sparkles, ShoppingCart, Tag } from "lucide-react";
+"use client";
+
+import { Sparkles, Tag } from "lucide-react";
 import Link from "next/link";
 import productsData from "@/data/products.json";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [particles, setParticles] = useState<Array<{left: number; top: number; delay: number; duration: number}>>([]);
+
+  useEffect(() => {
+    const newParticles = [...Array(20)].map(() => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 3,
+      duration: 3 + Math.random() * 2,
+    }));
+    setParticles(newParticles);
+  }, []);
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 relative overflow-hidden py-12 sm:py-20">
       {/* Animated background effects */}
@@ -62,9 +76,8 @@ export default function Home() {
             const discountedPrice = product.unitPrice * (1 - product.discount / 100);
 
             return (
-              <Link
+              <div
                 key={product.productId}
-                href={product.productUrls}
                 className="group relative bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800/50 hover:border-pink-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20"
               >
                 {/* Discount Badge */}
@@ -74,19 +87,23 @@ export default function Home() {
                 </div>
 
                 {/* Product Image */}
-                <div className="aspect-square w-full bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
-                  <img
-                    src={product.productImageUrls[0]}
-                    alt={product.productName}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
+                <Link href={product.productUrls} className="block">
+                  <div className="aspect-square w-full bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                    <img
+                      src={product.productImageUrls[0]}
+                      alt={product.productName}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                </Link>
 
                 {/* Product Info */}
                 <div className="p-4">
-                  <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 group-hover:text-pink-400 transition-colors">
-                    {product.productName}
-                  </h3>
+                  <Link href={product.productUrls}>
+                    <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 group-hover:text-pink-400 transition-colors">
+                      {product.productName}
+                    </h3>
+                  </Link>
 
                   <p className="text-gray-500 text-sm mb-3 line-clamp-2">
                     {product.productDescription}
@@ -102,13 +119,15 @@ export default function Home() {
                     </span>
                   </div>
 
-                  {/* CTA */}
-                  <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition-all duration-300 flex items-center justify-center gap-2">
-                    <ShoppingCart className="w-4 h-4" />
+                  {/* CTA Button */}
+                  <Link
+                    href={product.productUrls}
+                    className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
                     <span>View Deal</span>
-                  </button>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
@@ -116,15 +135,15 @@ export default function Home() {
 
       {/* Animated particles effect */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 bg-purple-500/30 rounded-full animate-ping"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 2}s`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+              animationDelay: `${particle.delay}s`,
+              animationDuration: `${particle.duration}s`,
             }}
           />
         ))}
