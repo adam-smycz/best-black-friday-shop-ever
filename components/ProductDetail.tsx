@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft, ShoppingCart, Heart, Share2, Tag, Truck, Shield, RotateCcw } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
+import { toast } from "sonner";
 
 interface Product {
   productId: string;
@@ -32,6 +34,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const [quantity, setQuantity] = useState(1);
   const [isLiked, setIsLiked] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
+  const router = useRouter();
   const addItem = useCartStore((state) => state.addItem);
 
   const discountedPrice = product.unitPrice * (1 - product.discount / 100);
@@ -50,6 +53,30 @@ export default function ProductDetail({ product }: ProductDetailProps) {
       discount: product.discount,
       productUrls: product.productUrls,
     }, quantity);
+
+    // Show success toast with product image
+    toast.success(
+      <div className="flex items-center gap-3">
+        <img
+          src={product.productImageUrls[0]}
+          alt={product.productName}
+          className="w-12 h-12 rounded-lg object-cover"
+        />
+        <div className="flex-1">
+          <div className="font-bold text-white">Added to cart!</div>
+          <div className="text-sm text-gray-300">
+            {quantity}x {product.productName}
+          </div>
+        </div>
+      </div>,
+      {
+        duration: 3000,
+        action: {
+          label: 'View Cart',
+          onClick: () => router.push('/cart'),
+        },
+      }
+    );
 
     // Show visual feedback
     setTimeout(() => {
