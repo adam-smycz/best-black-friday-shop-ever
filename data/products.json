@@ -1,0 +1,202 @@
+[
+  {
+    "productId": "XMAS-001",
+    "productName": "Premium Wireless Headphones",
+    "unitPrice": 299.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 70,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "High-quality wireless headphones with active noise cancellation, 30-hour battery life, and premium sound quality. Perfect gift for music lovers.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-001",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Holiday Tech Deals",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-002",
+    "productName": "Smart Watch Series X",
+    "unitPrice": 449.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 65,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "Latest generation smartwatch with health monitoring, GPS, and water resistance. Track your fitness goals in style.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-002",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Holiday Tech Deals",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-003",
+    "productName": "Cozy Winter Blanket Set",
+    "unitPrice": 89.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 80,
+    "productCategory": "Home & Living",
+    "productCategoryId": "HOME-001",
+    "productDescription": "Ultra-soft fleece blanket set perfect for cold winter nights. Includes throw blanket and decorative pillows.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-003",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Home Comfort",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-004",
+    "productName": "Gourmet Coffee Gift Set",
+    "unitPrice": 59.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 75,
+    "productCategory": "Food & Beverages",
+    "productCategoryId": "FOOD-001",
+    "productDescription": "Premium coffee collection featuring 12 different roasts from around the world. Perfect for coffee enthusiasts.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-004",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Gourmet Gifts",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-005",
+    "productName": "Professional DSLR Camera",
+    "unitPrice": 1299.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 60,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "Capture memories in stunning quality with this professional-grade DSLR camera. Includes 18-55mm lens.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-005",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Photography Essentials",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-006",
+    "productName": "Designer Leather Handbag",
+    "unitPrice": 399.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 85,
+    "productCategory": "Fashion",
+    "productCategoryId": "FASH-001",
+    "productDescription": "Elegant genuine leather handbag with multiple compartments. Timeless design perfect for any occasion.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-006",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Luxury Fashion",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-007",
+    "productName": "Gaming Console Bundle",
+    "unitPrice": 499.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 55,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "Next-gen gaming console with two controllers and three popular game titles. Entertainment for the whole family.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-007",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Gaming Paradise",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-008",
+    "productName": "Aromatherapy Diffuser Set",
+    "unitPrice": 79.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 90,
+    "productCategory": "Home & Living",
+    "productCategoryId": "HOME-001",
+    "productDescription": "Ultrasonic essential oil diffuser with 6 premium oils. Create a relaxing atmosphere at home.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-008",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Wellness & Relaxation",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-009",
+    "productName": "Premium Cookware Set",
+    "unitPrice": 349.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 70,
+    "productCategory": "Kitchen",
+    "productCategoryId": "KITCHEN-001",
+    "productDescription": "Professional-grade 12-piece non-stick cookware set. Includes pots, pans, and utensils for the home chef.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-009",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Culinary Excellence",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-010",
+    "productName": "Fitness Tracker & Scale Bundle",
+    "unitPrice": 149.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 80,
+    "productCategory": "Health & Fitness",
+    "productCategoryId": "HEALTH-001",
+    "productDescription": "Complete fitness tracking solution with activity monitor and smart scale. Start your health journey today.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1575058752200-a9d6c0f41945?w=800&q=80"
+    ],
+    "productUrls": "/product/XMAS-010",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "New Year Fitness",
+    "actionState": "available"
+  }
+]
