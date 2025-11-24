@@ -5,13 +5,15 @@ import ProductDetail from "@/components/ProductDetail";
 
 export function generateStaticParams() {
   return productsData.map((product) => ({
-    id: product.productId,
+    slug: product.productCategory.toLowerCase().replace(/\s+/g, '-'),
+    productId: product.productId,
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params;
-  const product = productsData.find((p) => p.productId === id);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; productId: string }> }): Promise<Metadata> {
+  const { slug, productId } = await params;
+  const categorySlug = decodeURIComponent(slug).replace(/-/g, ' ');
+  const product = productsData.find((p) => p.productId === productId && p.productCategory.toLowerCase() === categorySlug.toLowerCase());
 
   if (!product) {
     return {};
@@ -57,9 +59,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
-export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const product = productsData.find((p) => p.productId === id);
+export default async function ProductPage({ params }: { params: Promise<{ slug: string; productId: string }> }) {
+  const { slug, productId } = await params;
+  const categorySlug = decodeURIComponent(slug).replace(/-/g, ' ');
+  const product = productsData.find((p) => p.productId === productId && p.productCategory.toLowerCase() === categorySlug.toLowerCase());
 
   if (!product) {
     notFound();

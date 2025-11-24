@@ -139,11 +139,29 @@ export default function ProductDetail({ product }: ProductDetailProps) {
           {/* Back Button */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4 group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span>Back to Shop</span>
           </Link>
+
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-sm mb-8">
+            <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+              Home
+            </Link>
+            <span className="text-gray-600">/</span>
+            <Link
+              href={`/category/${product.productCategory.toLowerCase().replace(/\s+/g, '-')}`}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              {product.productCategory}
+            </Link>
+            <span className="text-gray-600">/</span>
+            <span className="text-white font-medium truncate max-w-xs sm:max-w-md">
+              {product.productName}
+            </span>
+          </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Product Image */}

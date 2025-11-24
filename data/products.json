@@ -13,7 +13,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-001",
+    "productUrls": "/category/electronics/XMAS-001",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -34,7 +34,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-002",
+    "productUrls": "/category/electronics/XMAS-002",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -55,7 +55,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-003",
+    "productUrls": "/category/home-&-living/XMAS-003",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -76,7 +76,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-004",
+    "productUrls": "/category/food-&-beverages/XMAS-004",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -97,7 +97,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-005",
+    "productUrls": "/category/electronics/XMAS-005",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -118,7 +118,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-006",
+    "productUrls": "/category/fashion/XMAS-006",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -139,7 +139,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-007",
+    "productUrls": "/category/electronics/XMAS-007",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -160,7 +160,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-008",
+    "productUrls": "/category/home-&-living/XMAS-008",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -181,7 +181,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-009",
+    "productUrls": "/category/kitchen/XMAS-009",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
@@ -202,7 +202,7 @@
     "productImageUrls": [
       "https://images.unsplash.com/photo-1575058752200-a9d6c0f41945?w=800&q=80"
     ],
-    "productUrls": "/product/XMAS-010",
+    "productUrls": "/category/health-&-fitness/XMAS-010",
     "promotionId": "BLACKFRIDAY2024",
     "resumedCartItem": false,
     "shoppingCartUrl": "/cart",
