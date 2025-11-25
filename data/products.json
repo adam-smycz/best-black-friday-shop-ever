@@ -208,5 +208,383 @@
     "shoppingCartUrl": "/cart",
     "virtualCategory": "New Year Fitness",
     "actionState": "available"
+  },
+  {
+    "productId": "XMAS-011",
+    "productName": "4K Ultra HD Smart TV",
+    "unitPrice": 799.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 65,
+    "stockQuantity": 7,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "55-inch 4K Ultra HD Smart TV with HDR, built-in streaming apps, and voice control. Stunning picture quality.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&q=80"
+    ],
+    "productUrls": "/category/electronics/XMAS-011",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Home Entertainment",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-012",
+    "productName": "Wireless Bluetooth Speaker",
+    "unitPrice": 129.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 75,
+    "stockQuantity": 18,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "Portable waterproof Bluetooth speaker with 360-degree sound and 24-hour battery life. Perfect for outdoor adventures.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
+    "productUrls": "/category/electronics/XMAS-012",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Portable Audio",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-013",
+    "productName": "Laptop Stand & USB Hub",
+    "unitPrice": 89.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 70,
+    "stockQuantity": 25,
+    "productCategory": "Electronics",
+    "productCategoryId": "ELEC-001",
+    "productDescription": "Ergonomic aluminum laptop stand with integrated 7-port USB hub. Improve your workspace comfort.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80"
+    ],
+    "productUrls": "/category/electronics/XMAS-013",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Work From Home",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-014",
+    "productName": "Decorative Throw Pillow Set",
+    "unitPrice": 49.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 85,
+    "stockQuantity": 40,
+    "productCategory": "Home & Living",
+    "productCategoryId": "HOME-001",
+    "productDescription": "Set of 4 premium velvet throw pillows in modern colors. Add style and comfort to any room.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&q=80"
+    ],
+    "productUrls": "/category/home-&-living/XMAS-014",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Home Decor",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-015",
+    "productName": "LED String Lights",
+    "unitPrice": 34.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 80,
+    "stockQuantity": 50,
+    "productCategory": "Home & Living",
+    "productCategoryId": "HOME-001",
+    "productDescription": "33ft warm white LED fairy lights with remote control. Create a cozy ambiance for any occasion.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1563106008-a53dfaee971a?w=800&q=80"
+    ],
+    "productUrls": "/category/home-&-living/XMAS-015",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Lighting & Ambiance",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-016",
+    "productName": "Luxury Scented Candle Set",
+    "unitPrice": 59.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 75,
+    "stockQuantity": 35,
+    "productCategory": "Home & Living",
+    "productCategoryId": "HOME-001",
+    "productDescription": "Premium soy wax candle collection with 5 unique scents. Long-lasting burn time up to 50 hours each.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1602874801006-95e9d5c2b0e9?w=800&q=80"
+    ],
+    "productUrls": "/category/home-&-living/XMAS-016",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Home Fragrance",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-017",
+    "productName": "Artisan Chocolate Collection",
+    "unitPrice": 69.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 70,
+    "stockQuantity": 15,
+    "productCategory": "Food & Beverages",
+    "productCategoryId": "FOOD-001",
+    "productDescription": "Handcrafted luxury chocolate assortment with 24 pieces. Made with premium Belgian chocolate.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?w=800&q=80"
+    ],
+    "productUrls": "/category/food-&-beverages/XMAS-017",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Sweet Treats",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-018",
+    "productName": "Organic Tea Sampler Set",
+    "unitPrice": 44.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 80,
+    "stockQuantity": 22,
+    "productCategory": "Food & Beverages",
+    "productCategoryId": "FOOD-001",
+    "productDescription": "Curated selection of 12 premium organic teas from around the world. Perfect for tea enthusiasts.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9?w=800&q=80"
+    ],
+    "productUrls": "/category/food-&-beverages/XMAS-018",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Tea Collection",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-019",
+    "productName": "Gourmet Snack Gift Basket",
+    "unitPrice": 79.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 65,
+    "stockQuantity": 12,
+    "productCategory": "Food & Beverages",
+    "productCategoryId": "FOOD-001",
+    "productDescription": "Deluxe snack basket featuring nuts, dried fruits, crackers, and artisan spreads. Perfect for sharing.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80"
+    ],
+    "productUrls": "/category/food-&-beverages/XMAS-019",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Gift Baskets",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-020",
+    "productName": "Designer Winter Coat",
+    "unitPrice": 299.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 75,
+    "stockQuantity": 8,
+    "productCategory": "Fashion",
+    "productCategoryId": "FASH-001",
+    "productDescription": "Elegant wool-blend winter coat with quilted lining. Stylish and warm for the coldest days.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=800&q=80"
+    ],
+    "productUrls": "/category/fashion/XMAS-020",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Winter Fashion",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-021",
+    "productName": "Cashmere Scarf Collection",
+    "unitPrice": 129.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 80,
+    "stockQuantity": 16,
+    "productCategory": "Fashion",
+    "productCategoryId": "FASH-001",
+    "productDescription": "Set of 2 luxurious 100% cashmere scarves in classic colors. Ultimate softness and warmth.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&q=80"
+    ],
+    "productUrls": "/category/fashion/XMAS-021",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Winter Accessories",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-022",
+    "productName": "Premium Leather Wallet",
+    "unitPrice": 89.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 70,
+    "stockQuantity": 28,
+    "productCategory": "Fashion",
+    "productCategoryId": "FASH-001",
+    "productDescription": "Handcrafted genuine leather bifold wallet with RFID protection. Timeless style with modern security.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&q=80"
+    ],
+    "productUrls": "/category/fashion/XMAS-022",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Leather Goods",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-023",
+    "productName": "Espresso Machine Pro",
+    "unitPrice": 499.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 60,
+    "stockQuantity": 6,
+    "productCategory": "Kitchen",
+    "productCategoryId": "KITCHEN-001",
+    "productDescription": "Professional espresso and cappuccino maker with milk frother. Cafe-quality drinks at home.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=800&q=80"
+    ],
+    "productUrls": "/category/kitchen/XMAS-023",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Coffee Bar",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-024",
+    "productName": "Chef's Knife Set",
+    "unitPrice": 199.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 75,
+    "stockQuantity": 14,
+    "productCategory": "Kitchen",
+    "productCategoryId": "KITCHEN-001",
+    "productDescription": "Professional 8-piece Japanese steel knife set with wooden block. Precision cutting for culinary excellence.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80"
+    ],
+    "productUrls": "/category/kitchen/XMAS-024",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Cutlery Collection",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-025",
+    "productName": "Stand Mixer Deluxe",
+    "unitPrice": 379.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 65,
+    "stockQuantity": 9,
+    "productCategory": "Kitchen",
+    "productCategoryId": "KITCHEN-001",
+    "productDescription": "5-quart tilt-head stand mixer with 10 speeds and multiple attachments. Baker's dream machine.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?w=800&q=80"
+    ],
+    "productUrls": "/category/kitchen/XMAS-025",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Baking Essentials",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-026",
+    "productName": "Yoga Mat & Block Set",
+    "unitPrice": 69.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 80,
+    "stockQuantity": 32,
+    "productCategory": "Health & Fitness",
+    "productCategoryId": "HEALTH-001",
+    "productDescription": "Eco-friendly yoga mat with carrying strap and 2 foam blocks. Non-slip surface for all practice levels.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&q=80"
+    ],
+    "productUrls": "/category/health-&-fitness/XMAS-026",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Yoga & Mindfulness",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-027",
+    "productName": "Resistance Bands Set",
+    "unitPrice": 39.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 85,
+    "stockQuantity": 45,
+    "productCategory": "Health & Fitness",
+    "productCategoryId": "HEALTH-001",
+    "productDescription": "Complete set of 5 resistance bands with different levels, door anchor, and workout guide. Portable gym solution.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=800&q=80"
+    ],
+    "productUrls": "/category/health-&-fitness/XMAS-027",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Home Workout",
+    "actionState": "available"
+  },
+  {
+    "productId": "XMAS-028",
+    "productName": "Massage Gun Pro",
+    "unitPrice": 179.99,
+    "currency": "USD",
+    "itemQuantity": 1,
+    "discount": 70,
+    "stockQuantity": 11,
+    "productCategory": "Health & Fitness",
+    "productCategoryId": "HEALTH-001",
+    "productDescription": "Deep tissue percussion massager with 6 heads and 20 speeds. Relieve muscle soreness and improve recovery.",
+    "productImageUrls": [
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
+    ],
+    "productUrls": "/category/health-&-fitness/XMAS-028",
+    "promotionId": "BLACKFRIDAY2024",
+    "resumedCartItem": false,
+    "shoppingCartUrl": "/cart",
+    "virtualCategory": "Recovery Tools",
+    "actionState": "available"
   }
 ]
