@@ -176,7 +176,7 @@ export default function CartPage() {
                     <div className="flex gap-6">
                       {/* Product Image */}
                       <Link
-                        href={`/product/${item.productId}`}
+                        href={item.productUrls}
                         className="flex-shrink-0"
                       >
                         <div className="w-32 h-32 bg-gray-800 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-pink-500 transition-all duration-300">
@@ -192,13 +192,13 @@ export default function CartPage() {
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-start gap-4 mb-4">
                           <div>
-                            <Link href={`/product/${item.productId}`}>
+                            <Link href={item.productUrls}>
                               <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 hover:text-pink-400 transition-colors cursor-pointer">
                                 {item.productName}
                               </h3>
                             </Link>
                             <Link
-                              href={`/product/${item.productId}`}
+                              href={item.productUrls}
                               className="flex items-center gap-2 mb-2 w-fit"
                             >
                               <span className="text-2xl font-black text-pink-400 hover:text-pink-300 transition-colors cursor-pointer">
@@ -317,10 +317,13 @@ export default function CartPage() {
                   </div>
 
                   {/* Checkout Button */}
-                  <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mb-4">
+                  <Link
+                    href="/checkout"
+                    className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mb-4"
+                  >
                     <CreditCard className="w-5 h-5" />
                     <span>Proceed to Checkout</span>
-                  </button>
+                  </Link>
 
                   {/* Trust Badges */}
                   <div className="space-y-2 text-center text-sm text-gray-400">
